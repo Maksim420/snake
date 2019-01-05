@@ -11,15 +11,26 @@ namespace Snake
         static void Main(string[] args)
         {
 
-            Draw(2, 2, '*');
+            Point p2 = new Point(4, 4, '#');
+
+            int arenaLength = 100;
+            int arenaHeight = 25;
+
+            HorLine LineUp = new HorLine(0, arenaLength, 0, '#');
+            LineUp.Draw();
+
+            HorLine LineDown = new HorLine(0, arenaLength, arenaHeight, '#');
+            LineDown.Draw();
+
+            VertLine LineLeft = new VertLine(0, arenaHeight, 0, '#');
+            LineLeft.Draw();
+
+            VertLine LineRight = new VertLine(0, arenaHeight, arenaLength, '#');
+            LineRight.Draw();
 
             Console.ReadKey();
         }
 
-        static void Draw(int x, int y, char symb)
-        {
-            Console.SetCursorPosition(x, y);
-            Console.WriteLine(symb);
-        }
+
     }
 }
